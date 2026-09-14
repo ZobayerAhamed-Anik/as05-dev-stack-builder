@@ -2,36 +2,31 @@ import React from 'react';
 import StackItem from './StackItem';
 
 const StackSidebar = ({ stack, onRemove, onRemoveAll }) => {
-  const count = stack.length;
-
   return (
-    <div className="bg-white rounded-2xl border border-gray-200 p-5 shadow-sm sticky top-20">
-      <h3 className="font-bold text-lg text-gray-900">Your Stack</h3>
-      <p className="text-xs text-gray-400 mt-1">
-        {count > 0 ? `${count} Technology Selected` : 'No technologies selected yet.'}
-      </p>
-
-      <div className="mt-4 space-y-2">
-        {count === 0 ? (
-          <div className="border border-dashed border-gray-300 rounded-xl p-8 text-center">
-            <p className="text-xs text-gray-400">Your stack is empty.</p>
-          </div>
-        ) : (
-          <div className="space-y-2 max-h-95 overflow-y-auto">
-            {stack.map((item) => (
-              <StackItem key={item.id} item={item} onRemove={onRemove} />
-            ))}
-          </div>
-        )}
+    <div className="bg-white rounded-2xl border border-gray-100 p-5 shadow-sm">
+      <div className="flex items-center justify-between mb-4 pb-3 border-b border-gray-100">
+        <h3 className="font-bold text-gray-900">Your Stack</h3>
+        <span className="text-xs bg-pink-100 text-pink-700 font-bold px-2.5 py-1 rounded-full">
+          {stack.length} Selected
+        </span>
       </div>
 
-      {count > 0 && (
-        <button
-          onClick={onRemoveAll}
-          className="w-full mt-4 py-2 border border-red-300 text-red-500 rounded-xl text-xs font-bold hover:bg-red-50"
-        >
-          Remove All
-        </button>
+      {stack.length === 0 ? (
+        <p className="text-xs text-gray-400 text-center py-8">
+          Your stack is currently empty. Click "Add to Stack" to select technologies.
+        </p>
+      ) : (
+        <div className="space-y-3">
+          {stack.map((item) => (
+            <StackItem key={item.id} item={item} onRemove={onRemove} />
+          ))}
+          <button
+            onClick={onRemoveAll}
+            className="w-full mt-4 py-2 text-xs text-red-600 hover:text-red-700 font-semibold border border-red-200 rounded-xl hover:bg-red-50 transition-colors"
+          >
+            Clear Stack
+          </button>
+        </div>
       )}
     </div>
   );
