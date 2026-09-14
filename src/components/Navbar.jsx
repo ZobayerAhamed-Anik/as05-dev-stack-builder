@@ -4,11 +4,9 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-100 px-4 lg:px-12 py-3">
+    <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-100 px-3 sm:px-4 lg:px-12 py-2.5 sm:py-3">
       <div className="max-w-7xl mx-auto flex items-center justify-between relative">
-
-        <div className="flex items-center gap-3">
-
+        <div className="flex items-center gap-2 sm:gap-3">
           <button 
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden p-1.5 text-gray-700 hover:text-gray-900 focus:outline-none rounded-lg hover:bg-gray-100 transition-colors z-20"
@@ -35,12 +33,12 @@ const Navbar = () => {
 
         <a 
           href="#home" 
-          className="md:hidden absolute left-1/2 -translate-x-1/2 flex items-center gap-2 z-10"
+          className="md:hidden absolute left-1/2 -translate-x-1/2 flex items-center gap-1.5 z-10"
         >
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-orange-500 via-pink-500 to-purple-600 flex items-center justify-center text-white font-bold text-sm">
+          <div className="w-7 h-7 rounded-md bg-gradient-to-tr from-orange-500 via-pink-500 to-purple-600 flex items-center justify-center text-white font-bold text-xs">
             DS
           </div>
-          <span className="font-bold text-xl text-gray-900">
+          <span className="font-bold text-base sm:text-lg text-gray-900 leading-none">
             Dev<span className="gradient-text">Stack</span>
           </span>
         </a>
@@ -53,11 +51,11 @@ const Navbar = () => {
           <a href="#contact" className="hover:text-gray-900 transition-colors">Contact</a>
         </div>
 
-        <div className="flex items-center gap-1.5 sm:gap-3 z-20">
-          <button className="btn btn-ghost text-gray-700 btn-sm font-medium px-2 sm:px-3 text-xs sm:text-sm">
+        <div className="flex items-center gap-1 sm:gap-2 z-20">
+          <button className="btn btn-ghost text-gray-700 btn-xs sm:btn-sm font-medium px-1.5 sm:px-3 text-[11px] sm:text-sm">
             Sign In
           </button>
-          <button className="btn btn-brand rounded-full btn-sm px-3 sm:px-5 text-xs sm:text-sm">
+          <button className="btn btn-brand rounded-full btn-xs sm:btn-sm px-2.5 sm:px-5 text-[11px] sm:text-sm">
             Sign Up
           </button>
         </div>
