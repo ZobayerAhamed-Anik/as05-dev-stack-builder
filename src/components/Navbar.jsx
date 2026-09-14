@@ -5,9 +5,9 @@ const Navbar = () => {
 
   return (
     <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-100 px-4 lg:px-12 py-3">
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
+      <div className="max-w-7xl mx-auto flex items-center justify-between relative">
 
-        <div className="flex items-center md:hidden">
+        <div className="flex items-center md:hidden z-10">
           <button 
             onClick={() => setIsOpen(!isOpen)}
             className="p-1 text-gray-700 hover:text-gray-900 focus:outline-none"
@@ -23,11 +23,13 @@ const Navbar = () => {
           </button>
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0 flex items-center gap-2">
           <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-orange-500 via-pink-500 to-purple-600 flex items-center justify-center text-white font-bold text-sm">
             DS
           </div>
-          <span className="font-bold text-xl text-gray-900">Dev Stack</span>
+          <span className="font-bold text-xl text-gray-900">
+            Dev<span className="gradient-text">Stack</span>
+          </span>
         </div>
 
         <div className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
@@ -38,9 +40,13 @@ const Navbar = () => {
           <a href="#contact" className="hover:text-gray-900">Contact</a>
         </div>
 
-        <div className="flex items-center gap-3">
-          <button className="btn btn-ghost text-gray-700 btn-sm font-medium">Sign In</button>
-          <button className="btn btn-brand rounded-full btn-sm px-5">Sign Up</button>
+        <div className="flex items-center gap-2 sm:gap-3 z-10">
+          <button className="btn btn-ghost text-gray-700 btn-sm font-medium px-2 sm:px-3 text-xs sm:text-sm">
+            Sign In
+          </button>
+          <button className="btn btn-brand rounded-full btn-sm px-4 sm:px-5 text-xs sm:text-sm">
+            Sign Up
+          </button>
         </div>
       </div>
 
