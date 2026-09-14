@@ -1,20 +1,18 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
-/* Central Brand Gradient Text Utility */
 @utility gradient-text {
   background: linear-gradient(135deg, #FF6B6B 0%, #D63384 50%, #8A2BE2 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Central Brand Gradient Button Utility */
 @utility btn-brand {
   background: linear-gradient(135deg, #FF6B6B 0%, #D63384 50%, #8A2BE2 100%);
   color: white;
   border: none;
-}
 
-@utility btn-brand:hover {
-  opacity: 0.9;
+  &:hover {
+    opacity: 0.9;
+  }
 }
